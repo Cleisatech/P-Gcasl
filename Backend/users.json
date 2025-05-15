@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1747181632087,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "cleisatech@gmail.com",
+    "password": "pass123",
+    "balance": 4900,
+    "documents": {},
+    "accountNumber": "4292340371"
+  },
+  {
+    "id": 1747181673062,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "balance": 100,
+    "documents": {},
+    "accountNumber": "1369834276"
+  },
+  {
+    "id": 1747183736560,
+    "accountNumber": "1234567890",
+    "firstName": "Rose",
+    "lastName": "Mary",
+    "email": "rosemary@example.com",
+    "password": "pass123",
+    "balance": 0,
+    "documents": {}
+  },
+  {
+    "id": 1747184115161,
+    "accountNumber": "9876543210",
+    "firstName": "Josuah",
+    "lastName": "John",
+    "email": "john@example.com",
+    "password": "pass123",
+    "balance": 0,
+    "documents": {}
+  },
+  {
+    "id": 1747185032657,
+    "accountNumber": "9322803442",
+    "firstName": "Jos",
+    "lastName": "Jo",
+    "email": "jos@example.com",
+    "password": "pass123",
+    "balance": 0,
+    "documents": {}
+  },
+  {
+    "id": 1747223565809,
+    "accountNumber": "7502247141",
+    "firstName": "ISAAC",
+    "lastName": "CLEMENT",
+    "email": "ojotule43@gmail.com",
+    "password": "clem5542",
+    "balance": 10105,
+    "documents": {}
+  },
+  {
+    "id": 1747223829250,
+    "accountNumber": "4138558919",
+    "firstName": "FRANK",
+    "lastName": "EDWARD",
+    "email": "frank@gmail.com",
+    "password": "clem5542",
+    "balance": 0,
+    "documents": {}
+  }
+]

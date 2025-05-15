@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification - GCash</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <header class="gcash-header">
+      <div class="gcash-logo">
+        <div class="gcash-logo-icon">G</div>
+        <div class="gcash-greeting">Verification</div>
+      </div>
+      <div class="profile-icon" id="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="gcash-content">
+      <!-- Error message container -->
+      <div id="error-message" class="error-message" style="display: none;">
+        Please fix the errors in the form and try again.
+      </div>
+
+      <form id="verification-form">
+        <input type="hidden" id="user_id" value="12345" autocomplete="off" /> <!-- Add user_id -->
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name</label>
+          <input type="text" class="form-input" id="name" placeholder="Enter your full name" aria-label="Full Name" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" class="form-input" id="email" placeholder="Enter your email" aria-label="Email Address" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number</label>
+          <input type="tel" class="form-input" id="phone" placeholder="Enter your phone number" aria-label="Phone Number" autocomplete="tel" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="id-front">Upload ID Card (Front)</label>
+          <input type="file" class="form-input" id="id-front" accept="image/*" aria-label="Upload front of ID" autocomplete="off" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="id-back">Upload ID Card (Back)</label>
+          <input type="file" class="form-input" id="id-back" accept="image/*" aria-label="Upload back of ID" autocomplete="off" required>
+        </div>
+        <button type="submit" class="form-button">Submit Verification</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/verification.js"></script>
+</body>
+</html>

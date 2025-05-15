@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Header -->
+        <header class="gcash-header">
+            <div class="gcash-logo">
+                <div class="gcash-logo-icon">A</div>
+                <div class="gcash-greeting">Admin Dashboard</div>
+            </div>
+            <div class="profile-icon" id="logout-btn" title="Sign Out">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="gcash-content">
+            <!-- Fund User Section -->
+            <section class="admin-section">
+                <h2 class="section-title"><i class="fas fa-money-bill-wave"></i> Fund User</h2>
+                <form id="fund-user-form" class="form">
+                    <div class="form-group">
+                        <label class="form-label" for="user-dropdown">Select User</label>
+                        <select id="user-dropdown" class="form-input" required>
+                            <option value="" disabled selected>Select a user</option>
+                            <!-- User options will be dynamically loaded here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="amount">Amount</label>
+                        <input type="number" class="form-input" id="amount" placeholder="Enter Amount" required>
+                    </div>
+                    <button type="submit" class="form-button">Add Funds</button>
+                </form>
+            </section>
+
+            <!-- Verified Users Section -->
+            <section class="admin-section">
+                <h2 class="section-title"><i class="fas fa-user-check"></i> Verified Users</h2>
+                <div class="form-group">
+                    <label class="form-label" for="verified-user-dropdown">Select Verified User</label>
+                    <select id="verified-user-dropdown" class="form-input" required>
+                        <option value="" disabled selected>Select a verified user</option>
+                        <!-- Verified user options will be dynamically loaded here -->
+                    </select>
+                </div>
+                <div id="verified-user-details" class="verified-user-details" style="display: none;">
+                    <h3>Verification Details</h3>
+                    <ul>
+                        <li><strong>Name:</strong> <span id="verified-name"></span></li>
+                        <li><strong>Email:</strong> <span id="verified-email"></span></li>
+                        <li><strong>Phone:</strong> <span id="verified-phone"></span></li>
+                        <li><strong>ID Front:</strong> <a id="verified-id-front" href="#" target="_blank">View Front</a></li>
+                        <li><strong>ID Back:</strong> <a id="verified-id-back" href="#" target="_blank">View Back</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

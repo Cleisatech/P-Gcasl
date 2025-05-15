@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-color: var(--gcash-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: var(--gcash-white);
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-header .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--gcash-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gcash-white);
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0 auto 10px;
+        }
+
+        .login-header h1 {
+            font-size: 24px;
+            color: var(--gcash-blue);
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--gcash-blue);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--gcash-border);
+            border-radius: 5px;
+            font-size: 14px;
+            color: var(--gcash-dark-gray);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gcash-blue);
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--gcash-blue);
+            color: var(--gcash-white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-button:hover {
+            background-color: var(--gcash-dark-blue);
+        }
+
+        .error-message {
+            color: var(--gcash-red);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo-icon">A</div>
+            <h1>Admin Login</h1>
+        </div>
+        <div class="error-message" id="error-message"></div>
+        <form id="admin-login-form">
+            <div class="form-group">
+                <label class="form-label" for="admin-username">Username</label>
+                <input type="text" class="form-input" id="admin-username" name="admin-username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="admin-password">Password</label>
+                <input type="password" class="form-input" id="admin-password" name="admin-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="form-button">Login</button>
+        </form>
+    </div>
+    <script src="js/admin-login.js"></script>
+</body>
+</html>

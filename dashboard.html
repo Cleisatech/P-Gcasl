@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCash - Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <header class="gcash-header">
+      <div class="gcash-logo">
+        <div class="gcash-logo-icon">G</div>
+        <div class="gcash-greeting">Hello, <span id="user-name">User</span></div>
+      </div>
+      <div class="profile-icon" id="profile-btn">
+        <i class="fas fa-user"></i>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="gcash-content">
+      <!-- Balance Card -->
+      <div class="balance-card">
+        <div class="balance-label">AVAILABLE BALANCE</div>
+        <div class="balance-amount">
+          <div>
+            <span class="peso-sign">₱</span> <span id="checking-balance">0.00</span>
+          </div>
+          <button class="cash-in-btn">
+            <i class="fas fa-plus"></i> Cash In
+          </button>
+        </div>
+        <div class="account-number-display">
+          Account #: <span id="account-number">0000000000</span>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid">
+        <div class="menu-item" id="send-money-feature">
+          <div class="menu-icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <div class="menu-label">Send</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="menu-label">Load</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="menu-label">Transfer</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <div class="menu-label">Bills</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <div class="menu-label">Borrow</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <div class="menu-label">GSave</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="menu-label">GInsure</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="menu-label">GInvest</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-heartbeat"></i> <!-- GLife icon -->
+          </div>
+          <div class="menu-label">GLife</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="menu-label">A+ Rewards</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">
+            <i class="fas fa-leaf"></i> <!-- GForest icon -->
+          </div>
+          <div class="menu-label">GForest</div>
+        </div>
+        <div class="menu-item" id="transactions-feature">
+          <div class="menu-icon">
+            <i class="fas fa-history"></i>
+          </div>
+          <div class="menu-label">Transactions</div>
+        </div>
+      </div>
+
+      <!-- Deals Section -->
+      <div class="deals-section">
+        <h2 class="deals-title">Mega Deals</h2>
+        <div class="deal-card">
+          <img src="IMG-20250414-WA0385.jpg" class="deal-image">
+        </div>
+      </div>
+      
+      <!-- Recent Transactions Section -->
+      <div class="recent-transactions-section">
+        <h2 class="section-title"><i class="fas fa-history"></i> Recent Transactions</h2>
+        <div class="transactions-list" id="recent-transactions-list">
+          <div class="no-transactions" id="no-recent-transactions">
+            No recent transactions
+          </div>
+          <!-- Transactions will be loaded here -->
+        </div>
+        <div class="view-all-link">
+          <a href="transactions.html">View All Transactions <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <div class="nav-item active">
+        <i class="fas fa-home"></i>
+        <div class="nav-text">Home</div>
+      </div>
+      <div class="nav-item">
+        <i class="fas fa-envelope"></i>
+        <div class="nav-text">Inbox</div>
+      </div>
+      <div class="nav-item">
+        <div class="qr-button">
+          <i class="fas fa-qrcode"></i>
+        </div>
+        <div class="nav-text">QR</div>
+      </div>
+      <div class="nav-item" id="nav-transactions">
+        <i class="fas fa-history"></i>
+        <div class="nav-text">Transactions</div>
+      </div>
+      <div class="nav-item" id="profile-nav">
+        <i class="fas fa-user"></i>
+        <div class="nav-text">Profile</div>
+      </div>
+    </div>
+
+    <!-- Side Menu (Hidden by default) -->
+    <div class="side-menu" id="side-menu">
+      <div class="menu-header">
+        <div class="welcome-text">Hello, <span id="menu-user-name">User</span></div>
+      </div>
+      <nav class="menu-nav">
+        <ul>
+          <li>
+            <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-credit-card"></i> My Account</a>
+          </li>
+          <li>
+            <a href="send-money.html"><i class="fas fa-paper-plane"></i> Send Money</a>
+          </li>
+          <li>
+            <a href="transactions.html"><i class="fas fa-history"></i> Transactions</a>
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+          <li>
+            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Coming Soon Modal -->
+    <div class="modal" id="coming-soon-modal">
+      <div class="modal-content">
+        <div class="modal-title">Coming Soon!</div>
+        <div class="modal-message">This feature is currently under development and will be available soon.</div>
+        <button type="button" class="form-button" id="close-modal-btn">Close</button>
+      </div>
+    </div>
+
+    <!-- Overlay for Side Menu -->
+    <div class="overlay" id="overlay"></div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+  <div class="settings">
+    <!-- ...existing settings code... -->
+    <div class="tab">
+        <button onclick="showTab('verification')">Verification</button>
+    </div>
+    <div id="verification" class="tab-content" style="display: none;">
+        <h3>Verification</h3>
+        <form id="verification-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="id-front">Upload ID Card (Front):</label>
+            <input type="file" id="id-front" name="id-front" accept="image/*" required>
+            
+            <label for="id-back">Upload ID Card (Back):</label>
+            <input type="file" id="id-back" name="id-back" accept="image/*" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+<script src="js/verification.js"></script>
+
+<!-- Verification Screen -->
+<div class="verification-screen" id="verification-screen" style="display: none;">
+  <header class="gcash-header">
+    <div class="gcash-logo">
+      <div class="gcash-logo-icon">G</div>
+      <div class="gcash-greeting">Verification</div>
+    </div>
+    <div class="profile-icon" id="close-verification-btn">
+      <i class="fas fa-times"></i>
+    </div>
+  </header>
+  <main class="gcash-content">
+    <form id="verification-form">
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name</label>
+        <input type="text" class="form-input" id="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" class="form-input" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone Number</label>
+        <input type="tel" class="form-input" id="phone" placeholder="Enter your phone number" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="id-front">Upload ID Card (Front)</label>
+        <input type="file" class="form-input" id="id-front" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="id-back">Upload ID Card (Back)</label>
+        <input type="file" class="form-input" id="id-back" accept="image/*" required>
+      </div>
+      <button type="submit" class="form-button">Submit Verification</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>
