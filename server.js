@@ -12,12 +12,11 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-// Serve frontend files
-const frontendPath = path.join(__dirname, '../');
-app.use(express.static(frontendPath));
+// Serve static files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve uploaded files
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Serve uploaded files from 'public/uploads'
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 // Paths to JSON files (acting as a database)
 const usersFilePath = path.join(__dirname, 'users.json');
@@ -55,7 +54,7 @@ if (updated) {
 }
 
 // Configure multer for file uploads
-const upload = multer({ dest: 'uploads/' }); // Files will be stored in the 'uploads' directory
+const upload = multer({ dest: path.join(__dirname, 'public/uploads') }); // Files will be stored in 'public/uploads'
 
 // API Routes
 
@@ -259,6 +258,6 @@ app.get('/verified-users', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
